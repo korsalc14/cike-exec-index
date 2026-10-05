@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/knowledge.json
+gbrain-godaddy.zip
+.DS_Store
+
