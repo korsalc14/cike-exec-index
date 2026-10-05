@@ -13,6 +13,6 @@ for f in baselines.md leases.md decisions.md; do
   echo "----------------------------------------------------------------"
 done
 echo "Agents on duty:"
-grep -E "^\| (Muse|Codex|K2|Jev|Laya)" "$D/agents.md" 2>/dev/null || echo "(see agents.md)"
+grep -E "^\| (Muse|Codex|K2|Jev|Laya)" "$D/AGENTS.md" 2>/dev/null || echo "(see AGENTS.md)"
 echo "================================================================"
 echo "End of brief. Verify anything stale before acting on it."
