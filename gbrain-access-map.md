@@ -40,7 +40,9 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | tailscaled | CLI build (`brew install tailscale` — GUI cask needs sudo, skipped); `com.cike.tailscaled` LaunchAgent, userspace-networking (no root needed), state `~/.tailscale/`; supervised, awaiting login |
 | Mac login | browser link generated (one-time, in login.txt); CK opens it, signs in, approves machine → Mac gets `100.x` |
 | K2 phone side | Tailscale Android app, SAME account as Mac login — K2/user step, cannot do from here |
-| Next after both online | verify phone→Mac `100.x` ping, then rebind gbrain serve to tailnet IP (still loopback until then — K2 decision recorded, exposure unchanged) |
+| Both online | mac `100.124.92.112` + korsals-ultra `100.107.139.30`, same tailnet, verified 2026-10-05 |
+| Serve design (corrected) | direct `--bind 100.x` is IMPOSSIBLE in userspace mode (no local interface carries the address — proven by bind test; gbrain mislabels it "port in use"). Final: gbrain stays loopback `:3131` (healthy, token via 700 wrapper) + `tailscale serve` proxies it to tailnet HTTPS. Zero LAN exposure, secret never in plist/logs/repo |
+| BLOCKED on admin click | `tailscale serve` needs the feature enabled once by the tailnet admin — open `https://login.tailscale.com/f/serve?node=n8QV9dnLQv11CNTRL`, then tell lead to run `tailscale serve --bg http://127.0.0.1:3131` and prove phone→Mac recall |
 
 ## Rules (anti-confusion)
 
