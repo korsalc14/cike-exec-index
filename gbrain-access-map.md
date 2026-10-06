@@ -9,6 +9,8 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 |---|---|---|
 | Brain DB | `~/.gbrain/brain.pglite` (+ `.gbrain-owner.json`) | live, written today (fact #5 probe kept: exec-session symlink lesson) |
 | CLI | `~/.bun/bin/gbrain`, symlinked into `~/.local/bin/` | runs everywhere (Terminal + exec sessions); v0.60.72.0 pinned — 0.60.93.0 offered, do NOT upgrade without CK |
+| 24/7 serve | `com.cike.gbrain-serve` LaunchAgent: `serve --http --bind 127.0.0.1 --port 3131`, RunAtLoad + KeepAlive, logs `~/.gbrain/logs/serve.log` | UP since 2026-10-05; kill-9 test passed (auto-restarted, HTTP alive); loopback-only = zero network exposure; resolve IPC socket bound at `brain.pglite/.gbrain-resolve.sock`; admin token hidden by non-TTY guard |
+| Mac sleep | `pmset sleep 0` currently (incidental — held by sharingd/ChatGPT/caffeinate, not a setting) | ONE MANUAL STEP for CK: System Settings → Energy → "Prevent automatic sleeping on power adapter" (or `sudo pmset -c sleep 0` in Terminal) — no passwordless sudo here, so I could not set it; without this, sleep still pauses everything |
 | Upgrade prompt | every command prints UPGRADE_AVAILABLE | noise, ignore until CK approves upgrade |
 | Correct syntax | `remember <fact> --provenance "..." --entity slug` | provenance REQUIRED; recall matches entity first, then text |
 
