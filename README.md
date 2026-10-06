@@ -1,8 +1,13 @@
-# cike-exec-index — cross-repo team memory (index, not a copy)
+# cike-exec-index — THE team-state home (correction 2026-10-05)
 
-Rule: this folder POINTS, never duplicates. Detail lives in repos;
-here lives the map. If something here contradicts a repo, the repo wins
-and this index gets fixed same-day.
+CK ruling: one place, not many. This repo is the ONLY team-state home.
+No agent maintains a second project record anywhere else — no session
+logs with project entries, no duplicate indexes, no parallel truth.
+
+Rule: this repo POINTS, never duplicates. Detail lives in product repos;
+here lives leases, baselines, and the decision index. If something here
+contradicts a product repo, the product repo wins and this index gets
+fixed same-day.
 
 - AGENTS.md — who the agents are, their lanes, auth/tooling health.
 - `leases.md` — who is touching what, across repos. Check before starting.

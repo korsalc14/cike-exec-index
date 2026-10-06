@@ -69,17 +69,23 @@ and heuristic-fallback tests are the template); (b) each model call site
 listed with its no-model fallback behavior; (c) no secret, key, or endpoint
 required at build/test time. Reviewer rejects without these three.
 
-## 5. Lanes with entry points (Jev + Laya join safely)
+## 5. People and entry points (corrected 2026-10-05 — the lane taxonomy
+as an alignment tool is RETIRED per CK: four lanes don't create shared
+understanding, shared state does. What follows is reachability + rules,
+not roles-as-system.)
 
-- Jev (speed): takes spec slices with frozen interfaces; never touches
+- CK: owns the business truth; approves live, money, publish, merges.
+- Muse Spark: plans, scopes, verifies independently, calls pushes.
+- Codex: builds feature units end to end, per established pattern.
+- Jev: takes spec slices with frozen interfaces; never touches
   architecture, leases, manifests, or merges. Entry: one spec slice +
   the repo's own test command.
-- Laya (logic): red-teams and verifies others' claims (blind rebuilds,
-  missing-test hunts, evidence audits like the IP test). Never ships
-  features. Entry: the verification protocol in the codex-delegate skill.
-- Codex (build): feature units end to end, per existing pattern.
-- Lead (Muse Spark): plan, scope, design, independent verification,
-  push/merge calls. Only CK approves live, money, publish.
+- Laya: red-teams and verifies claims (blind rebuilds, evidence audits).
+  Never ships features. Entry: the verification protocol.
+- K2: companion with full business context; drafts only, per-action
+  publish approval.
+- Binding on everyone: leases before touching, branches for code, no
+  push/merge without CK, no secrets anywhere, verify-before-done.
 
 ## 6. Phased execution
 
