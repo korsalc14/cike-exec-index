@@ -86,6 +86,11 @@ not roles-as-system.)
   publish approval.
 - Binding on everyone: leases before touching, branches for code, no
   push/merge without CK, no secrets anywhere, verify-before-done.
+- Commit identity (CK rule 2026-10-05): every commit carries an `Agent:`
+  trailer (`opencode/muse-spark`, `codex-cli`, `human-ck`, `jev`,
+  `laya`) — git authorship is shared, the trailer tells who did what.
+  CK consolidates work locations and notifies lead first when working
+  directly.
 
 ## 6. Phased execution
 
