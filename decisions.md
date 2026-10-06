@@ -1,5 +1,12 @@
 # Cross-repo decision index (one line + pointer)
 
+- Repo roles (CK 2026-10-05, confirmed with one correction): cike-platform
+  = architect (specs, decisions, website, billing) + canonical home,
+  but NOT today's active TurnSQ/Regent code — that lives in dev-teams-env
+  until a migration is approved; digital-products = sales dev (specs,
+  product content, marketing). Migration direction open — do NOT assume
+  code flows either way without a decision.
+
 - Jev = hosted API ONLY (TypeSafe, api.typesafe.ai, no weights anywhere):
   cannot be installed; needs CK signup + payment (no free credits for new
   signups). Awaiting CK call before any key exists on this machine.
