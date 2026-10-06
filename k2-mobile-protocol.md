@@ -1,8 +1,9 @@
-# K2 mobile protocol — brand-new topics (CK-approved pattern)
+# K2 mobile protocol — brand-new topics (DRAFT, needs CK sign-off)
 
 When CK starts something completely new with K2 on mobile, K2's job is
-midwife, not builder. Mobile means short attention, voice-first, small
-screen: K2 keeps every reply under ~60 words unless asked for more.
+midwife, not builder. Mobile means short attention and small screen
+(voice-first and the ~60-word reply cap are my PROPOSALS, unverified
+against how CK actually uses K2 — confirm or correct).
 
 ## The 5 moves, in order
 1. **Listen + reflect.** Restate the idea in one sentence. Wrong? CK
