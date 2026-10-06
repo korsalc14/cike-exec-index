@@ -47,6 +47,7 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | Mac self-test limit | this Mac CANNOT reach its own tailnet name/IP (userspace mode: no magicDNS resolver, no local 100.x interface, no hairpin). Loopback health = ok; proxy config = confirmed; phone→Mac is the only true proof and only K2 can run it |
 | K2 phone test (Termux) | GREEN 2026-10-05: phone→Mac over 5G/tailnet proven end-to-end |
 | K2 grant `k2-mobile` | memory-writer, 30d token, cred `~/.gbrain/serve/k2-mobile.json` (600, token handed to CK 2026-10-05 for private relay — NEVER in repo/chat logs). URL: `http://mac.tail9eec95.ts.net/mcp`, env `GBRAIN_REMOTE_TOKEN`. Revoke: `mcp admin revoke <clientId>` |
+| K2 ACTIVE | first ops seen server-side 2026-10-05: remember×2, recall×several, forget×2 (self-cleanup), whoami. Shared facts #7–10 verified intact by independent recall |
 | HTTPS failure (diagnosed) | phone reached Mac fine; TLS died server-side (`no TailscaleVarRoot` — no provisioned cert in userspace mode). Fix: plain-HTTP serve inside the tailnet (transport already WireGuard-encrypted, HTTPS redundant). HTTPS certs remain an optional admin-console upgrade, not needed |
 
 ## Rules (anti-confusion)
