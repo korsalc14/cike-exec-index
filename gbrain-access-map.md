@@ -42,7 +42,9 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | K2 phone side | Tailscale Android app, SAME account as Mac login — K2/user step, cannot do from here |
 | Both online | mac `100.124.92.112` + korsals-ultra `100.107.139.30`, same tailnet, verified 2026-10-05 |
 | Serve design (corrected) | direct `--bind 100.x` is IMPOSSIBLE in userspace mode (no local interface carries the address — proven by bind test; gbrain mislabels it "port in use"). Final: gbrain stays loopback `:3131` (healthy, token via 700 wrapper) + `tailscale serve` proxies it to tailnet HTTPS. Zero LAN exposure, secret never in plist/logs/repo |
-| BLOCKED on admin click | `tailscale serve` needs the feature enabled once by the tailnet admin — open `https://login.tailscale.com/f/serve?node=n8QV9dnLQv11CNTRL`, then tell lead to run `tailscale serve --bg http://127.0.0.1:3131` and prove phone→Mac recall |
+| Proxy LIVE | `https://mac.tail9eec95.ts.net/` → loopback `:3131`, tailnet-only (serve status confirmed). Admin click done by CK |
+| Mac self-test limit | this Mac CANNOT reach its own tailnet name/IP (userspace mode: no magicDNS resolver, no local 100.x interface, no hairpin). Loopback health = ok; proxy config = confirmed; phone→Mac is the only true proof and only K2 can run it |
+| K2 phone test (Termux) | `curl -sk --max-time 15 https://mac.tail9eec95.ts.net/health` → expect `{"status":"ok",...}`. On success: recall/API auth (OAuth token) is the next unit, not this one |
 
 ## Rules (anti-confusion)
 
