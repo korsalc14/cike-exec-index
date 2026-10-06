@@ -45,7 +45,7 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | Serve design (corrected) | direct `--bind 100.x` is IMPOSSIBLE in userspace mode (no local interface carries the address — proven by bind test; gbrain mislabels it "port in use"). Final: gbrain stays loopback `:3131` (healthy, token via 700 wrapper) + `tailscale serve` proxies it to tailnet HTTPS. Zero LAN exposure, secret never in plist/logs/repo |
 | Proxy LIVE | `https://mac.tail9eec95.ts.net/` → loopback `:3131`, tailnet-only (serve status confirmed). Admin click done by CK |
 | Mac self-test limit | this Mac CANNOT reach its own tailnet name/IP (userspace mode: no magicDNS resolver, no local 100.x interface, no hairpin). Loopback health = ok; proxy config = confirmed; phone→Mac is the only true proof and only K2 can run it |
-| K2 phone test (Termux) | `curl --max-time 15 http://mac.tail9eec95.ts.net/health` → expect `{"status":"ok",...}`. On success: recall/API auth (OAuth token) is the next unit, not this one |
+| K2 phone test (Termux) | GREEN 2026-10-05: phone→Mac over 5G/tailnet proven end-to-end. Next unit (awaiting CK): recall/API auth via `mcp grant` — same unit also unblocks Codex-on-Mac |
 | HTTPS failure (diagnosed) | phone reached Mac fine; TLS died server-side (`no TailscaleVarRoot` — no provisioned cert in userspace mode). Fix: plain-HTTP serve inside the tailnet (transport already WireGuard-encrypted, HTTPS redundant). HTTPS certs remain an optional admin-console upgrade, not needed |
 
 ## Rules (anti-confusion)
