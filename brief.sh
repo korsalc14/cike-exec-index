@@ -1,5 +1,5 @@
 #!/bin/bash
-# gbrain-brief: assemble current team state into one paste-ready text for
+# cike-brief: assemble current team state into one paste-ready text for
 # agents that cannot read this Mac (e.g. K2 on mobile).
 # Usage: ./brief.sh [extra note]
 set -u

@@ -13,5 +13,5 @@ fixed same-day.
 - `leases.md` — who is touching what, across repos. Check before starting.
 - `decisions.md` — every cross-repo decision, one line + pointer.
 - `baselines.md` — what "green and running" currently means, per service.
-- Per-repo truth: `dev-teams-env/docs/gbrain/` (planned), `cike-platform`
+- Per-repo truth: `dev-teams-env/docs/team-state/` (planned, never created — do NOT name it gbrain/), `cike-platform`
   docs (WORKLOG, SOURCE_OF_TRUTH, decisions).
