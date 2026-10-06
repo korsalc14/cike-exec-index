@@ -37,9 +37,10 @@ Every artifact has exactly one home. Anything elsewhere is a pointer.
 | Product content (guides, assets) | digital-products `products/` | nowhere else |
 | Marketing/SEO/backlinks | digital-products `marketing/` | nowhere else |
 | Task specs + queue | digital-products `specs/` + `QUEUE.md` | nowhere else |
-| TurnSQ code | dev-teams-env `apps/turnsq/` (+ merge to cike-platform only by decision) | cike-platform `apps/nailapp` stays a README boundary until migration approved |
-| Regent K2 code | dev-teams-env `apps/regent-k2/` | cike-platform copy is a snapshot, not a second truth |
+| TurnSQ code | cike-platform `apps/turnsq/` (migrated 2026-10-05, merged to main, verified 64+4+17) | dev-teams-env holds bench origin + in-flight branches only (e.g. SMS); old `apps/nailapp` name retired, marketing URLs untouched |
+| Regent K2 code | cike-platform `apps/regent-k2/` (migrated 2026-10-05, merged to main, verified 59/59; runs local-only via Docker) | dev-teams-env holds bench origin + in-flight branches only |
 | Billing/entitlement code | cike-platform `packages/billing/` | nowhere else |
+| Active dev bench (branches, experiments, in-flight units) | dev-teams-env branches | merged code moves to its sale-dev home — a second copy elsewhere is a bug |
 | Voice-agent CONFIG | xAI console (live truth) | digital-products `products/voice-agents/` = reference copies + registry |
 | Business truth/decisions | cike_brain (Drive) + decision docs in repos | cike-exec-index/decisions.md indexes only |
 | Money movement | Whop (per charge/membership rule) | code records, never moves |
