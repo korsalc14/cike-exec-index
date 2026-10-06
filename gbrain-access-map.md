@@ -33,6 +33,15 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | dev-teams-env | `docs/repo-contracts` ahead 1 (`9e9e76a`) | main `d60323d` | 1 commit unpushed — push or drop, do not let it rot |
 | digital-products | main `54d5b72` | in sync | local QUEUE dir absent — K2's loop owns it, do not recreate here |
 
+## Tailnet (K2 on 5G — LAN is unreachable, tailnet is required)
+
+| What | Where / state as of 2026-10-05 |
+|---|---|
+| tailscaled | CLI build (`brew install tailscale` — GUI cask needs sudo, skipped); `com.cike.tailscaled` LaunchAgent, userspace-networking (no root needed), state `~/.tailscale/`; supervised, awaiting login |
+| Mac login | browser link generated (one-time, in login.txt); CK opens it, signs in, approves machine → Mac gets `100.x` |
+| K2 phone side | Tailscale Android app, SAME account as Mac login — K2/user step, cannot do from here |
+| Next after both online | verify phone→Mac `100.x` ping, then rebind gbrain serve to tailnet IP (still loopback until then — K2 decision recorded, exposure unchanged) |
+
 ## Rules (anti-confusion)
 
 1. One writer at a time: claim a lease in `leases.md` before writing brain facts from any Mac lane.
