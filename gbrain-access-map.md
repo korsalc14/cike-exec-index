@@ -9,7 +9,8 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 |---|---|---|
 | Brain DB | `~/.gbrain/brain.pglite` (+ `.gbrain-owner.json`) | live, written today (fact #5 probe kept: exec-session symlink lesson) |
 | CLI | `~/.bun/bin/gbrain`, symlinked into `~/.local/bin/` | runs everywhere (Terminal + exec sessions); v0.60.72.0 pinned — 0.60.93.0 offered, do NOT upgrade without CK |
-| 24/7 serve | `com.cike.gbrain-serve` LaunchAgent: `serve --http --bind 127.0.0.1 --port 3131`, RunAtLoad + KeepAlive, logs `~/.gbrain/logs/serve.log` | UP since 2026-10-05; kill-9 test passed (auto-restarted, HTTP alive); loopback-only = zero network exposure; resolve IPC socket bound at `brain.pglite/.gbrain-resolve.sock`; admin token hidden by non-TTY guard |
+| 24/7 serve | `com.cike.gbrain-serve` LaunchAgent: `serve --http --bind 127.0.0.1 --port 3131` via 700 wrapper (token inject), RunAtLoad + KeepAlive, logs `~/.gbrain/logs/serve.log` | UP since 2026-10-05; kill-9 test passed; tailnet proxy `http://mac.tail9eec95.ts.net/` via `tailscale serve --bg --http=80` (HTTPS dropped: no cert in userspace mode; WireGuard transport already encrypted) |
+| LOCK (all Mac lanes read this) | PGLite is SINGLE-OPEN, held by serve | direct CLI remember/recall FAILS with `pglite_busy` while serve runs (proven: Codex probe + lead self-test). Mac lanes = relay via lead until `mcp grant` unit lands. Serve stays up — K2 test has priority |
 | Mac sleep | `pmset sleep 0` currently (incidental — held by sharingd/ChatGPT/caffeinate, not a setting) | ONE MANUAL STEP for CK: System Settings → Energy → "Prevent automatic sleeping on power adapter" (or `sudo pmset -c sleep 0` in Terminal) — no passwordless sudo here, so I could not set it; without this, sleep still pauses everything |
 | Upgrade prompt | every command prints UPGRADE_AVAILABLE | noise, ignore until CK approves upgrade |
 | Correct syntax | `remember <fact> --provenance "..." --entity slug` | provenance REQUIRED; recall matches entity first, then text |
@@ -19,7 +20,7 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | Lane | Has on disk | Reaches brain via | Last verified |
 |---|---|---|---|
 | Muse Spark (lead, this Mac) | this repo @ `~/Documents/cike-exec-index` (main = `856a846`, in sync); repos under `~/Documents/`; `~/laya-env`; `~/.gbrain/` | direct CLI | 2026-10-05 (remember/recall #5 green) |
-| Codex exec sessions (Mac) | skill `~/.config/opencode/skills/codex-delegate/SKILL.md`; binary inside ChatGPT.app (v0.154.0); dead shim `~/.local/bin/codex` (never use) | direct CLI (same DB — coordinate via leases, never parallel-write) | 2026-10-05 (PATH fix applies to exec sessions too) |
+| Codex exec sessions (Mac) | skill `~/.config/opencode/skills/codex-delegate/SKILL.md` (lock truth baked in); binary inside ChatGPT.app (v0.154.0); dead shim `~/.local/bin/codex` (never use) | relay via lead by DEFAULT (serve holds the DB lock); CLI only in approved serve-down windows; `mcp grant` unit = proper fix, queued after K2 green | 2026-10-05 (probe PROVED reachability + lock conflict; skill corrected same day) |
 | K2 (mobile, no Mac disk) | NOTHING on this Mac readable to it; own Whop key in its own env | relay ONLY: lead runs `brief.sh` here, pastes text; lead writes K2's lessons with provenance "via K2 relay" | brief.sh = 68-line generator, current |
 | Jev (judge lane) | no key, no local files | blocked until CK signup+payment decision | research done, onboarding packet open |
 | Laya (logic lane) | `~/laya-env` (pip laya 0.3.28, HF weights on first run) | local library, not a brain client; calibration + thresholds open | live proof 2026-10-04 (billing choice, noul 0.13) |
