@@ -35,3 +35,4 @@
 - Fast lane (phone-only 15-min): K2 holds own Whop key, drafts-only + per-action publish approval; Mac CLI creds separate → cike-exec-index/fast-lane.md`.
 - K2 mobile protocol (brand-new topics): 5-move midwife pattern → cike-exec-index/k2-mobile-protocol.md`.
 - Product-lines integration plan (draft): single-home map, status-by-evidence, 90/10 gate, K2C = Mac backend, Jev+Laya routing judges → cike-exec-index/plan-product-lines-integration.md`.
+- Lane IDs (CK order 2026-10-07, replaces bare "codex"): CX-MAC (Mac Codex, exec + interactive one lane), CX-TERM (Termux Codex, K2-driven), CX-MUSE (Muse app, k2-mobile grant), GBRAIN (shared memory itself, not a lane). Map: gbrain-access-map.md; brain fact #56; worklog identity sections.
