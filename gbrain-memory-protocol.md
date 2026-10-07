@@ -29,6 +29,7 @@ This WILL happen (three lanes, one brain). The protocol:
 | Slug | Covers |
 |---|---|
 | `gbrain-protocol` | this protocol itself: facts-vs-pages, recall-before-write, timeline + contradiction rules, backfill scope (facts #12–16) |
+| `shellular` | Shellular verdict (operator yes / bridge no), view-operate-only rule, research-done pointer (facts #52–54) |
 | `single-home` | repo roles: WHAT (digital-products) / BUILT (cike-platform) / BENCH (dev-teams-env) |
 | `gbrain-access` | how each lane reaches the brain, tokens, lock rules |
 | `turnsq-status` | TurnSQ product state, pilot, leases, branches |
