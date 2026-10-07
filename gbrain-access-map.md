@@ -49,6 +49,7 @@ The shared agent memory is garrytan/gbrain v0.60.72.0, one PGLite DB on this Mac
 | K2 grant `k2-mobile` | memory-writer, 30d token, cred `~/.gbrain/serve/k2-mobile.json` (600, token handed to CK 2026-10-05 for private relay — NEVER in repo/chat logs). URL: `http://mac.tail9eec95.ts.net/mcp`, env `GBRAIN_REMOTE_TOKEN`. Revoke: `mcp admin revoke <clientId>` |
 | K2 ACTIVE | first ops seen server-side 2026-10-05: remember×2, recall×several, forget×2 (self-cleanup), whoami. Shared facts #7–10 verified intact by independent recall. K2 = ONE phone (`korsals-ultra`, 100.107.139.30) running TWO apps: Termux Codex CLI + Muse. Per CK 2026-10-06 |
 | Naming (CK) | `muse` ≡ `k2-mobile` (the Muse app, holder of the k2-mobile grant). Tailnet node `muse` (100.112.155.119) is K2's — legit, no action |
+| Codex IDs (CK order, short + clear) | `CX-MAC` = Codex on this Mac (lead exec dispatches + CK interactive ChatGPT/Codex CLI — same binary, same worklog, one lane). `CX-TERM` = Codex CLI in Termux on the phone (terminal, K2-driven; brain access UNVERIFIED). `CX-MUSE` = Muse app on the phone (chat UI, k2-mobile grant). Use these IDs in leases, provenance, and reports — never bare "codex" |
 | HTTPS failure (diagnosed) | phone reached Mac fine; TLS died server-side (`no TailscaleVarRoot` — no provisioned cert in userspace mode). Fix: plain-HTTP serve inside the tailnet (transport already WireGuard-encrypted, HTTPS redundant). HTTPS certs remain an optional admin-console upgrade, not needed |
 
 ## Rules (anti-confusion)
